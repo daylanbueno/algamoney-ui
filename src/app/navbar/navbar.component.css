@@ -1,0 +1,36 @@
+.navbar{
+    padding: 10px;
+    background-color: #1e94d2;
+}
+.navbar-menu{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  z-index: 9998;
+  background-color: #3a3633;
+  list-style: none;
+  padding: 0;
+}
+.novbar-usuario{
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 15px;
+  border-bottom: 1px solid #525151;
+  margin-bottom:15px;
+}
+
+.navbar-menuItem{
+  padding: 15px;
+}
+
+.navbar-menuItem a {
+  color: #c0bbb7;
+  text-decoration: none;
+}
+.navbar-menuItem :hover {
+  color: #fff;
+
+}
