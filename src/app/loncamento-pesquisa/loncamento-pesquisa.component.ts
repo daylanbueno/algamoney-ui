@@ -16,7 +16,7 @@ export class LoncamentoPesquisaComponent {
            dataPagamento: '09/06/2017', valor: 80000, pessoa: 'Atacado Brasil' },
          { tipo: 'DESPESA', descricao: 'Impostos', dataVencimento: new Date(2018, 5, 10),
            dataPagamento: null, valor: 14312, pessoa: 'Ministério da Fazenda' },
-         { tipo: 'DESPESA', descricao: 'Mensalidade de escola', dataVencimento :new Date(2017, 5, 10),
+         { tipo: 'DESPESA', descricao: 'Mensalidade de escola', dataVencimento : new Date(2017, 5, 10),
            dataPagamento: '30/05/2017', valor: 800, pessoa: 'Escola Abelha Rainha' },
          { tipo: 'RECEITA', descricao: 'Venda de carro', dataVencimento: new Date(2019, 5, 10),
            dataPagamento: null, valor: 55000, pessoa: 'Sebastião Souza' },
