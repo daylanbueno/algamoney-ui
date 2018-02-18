@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-loncamento-pesquisa',
-  templateUrl: './loncamento-pesquisa.component.html',
-  styleUrls: ['./loncamento-pesquisa.component.css']
+  selector: 'app-lancamento-pesquisa',
+  templateUrl: './lancamento-pesquisa.component.html',
+  styleUrls: ['./lancamento-pesquisa.component.css']
 })
 export class LoncamentoPesquisaComponent {
 
