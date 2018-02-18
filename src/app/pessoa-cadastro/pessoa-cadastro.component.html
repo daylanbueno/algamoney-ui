@@ -1,0 +1,56 @@
+<div class="container">
+
+  <form>
+    <div class="ui-g-12">
+      <h1>Nova Pessoa</h1>
+    </div>
+
+    <div class="ui-g-12 ui-fluid">
+      <label>Nome</label>
+      <input pInputText type="text">
+    </div>
+
+    <div class="ui-g-9 ui-fluid">
+      <label>Logradouro</label>
+      <input pInputText type="text">
+    </div>
+
+    <div class="ui-g-3 ui-fluid">
+      <label>Número</label>
+      <input pInputText type="text">
+    </div>
+
+
+    <div class="ui-g-4 ui-fluid">
+      <label>Complemento</label>
+      <input pInputText type="text">
+    </div>
+
+    <div class="ui-g-4 ui-fluid">
+      <label>Bairro</label>
+      <input pInputText type="text">
+    </div>
+
+    <div class="ui-g-4 ui-fluid">
+      <label>Cep</label>
+      <p-inputMask mask="99.999-999"></p-inputMask>
+    </div>
+
+     <div class="ui-g-12 ui-md-6 ui-fluid">
+      <label>Municipio</label>
+      <p-dropdown placeholder="Selecione" [options]="municipios" [autoWidth]="false"  [filter]="true"></p-dropdown>
+    </div>
+
+    <div class="ui-g-12 ui-md-6 ui-fluid">
+      <label>Estado</label>
+      <p-dropdown placeholder="Selecione" [options]="estados" [autoWidth]="false"  [filter]="true"></p-dropdown>
+    </div>
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Salvar" ></button>
+      <button pButton  type="button" label="Novo" class="ui-button-info" ></button>
+      <a href="#">Voltar para a pesquisa</a>
+    </div>
+
+  </form>
+</div>
