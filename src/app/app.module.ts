@@ -20,7 +20,6 @@ import { PessoaPesquisaComponent } from './pessoa-pesquisa/pessoa-pesquisa.compo
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
 import { FormsModule } from '@angular/forms';
-import { MessageComponent } from './message/message.component';
 
 
 @NgModule({
@@ -31,7 +30,6 @@ import { MessageComponent } from './message/message.component';
     PessoaPesquisaComponent,
     LancamentoCadastroComponent,
     PessoaCadastroComponent,
-    MessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +44,7 @@ import { MessageComponent } from './message/message.component';
     DropdownModule,
     CurrencyMaskModule,
     InputMaskModule,
-    FormsModule,
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,12 @@
 <div class="container">
 
-    <form #form="ngForm">
+    <form>
       <div class="ui-g-12">
         <h1>Novo Lançamento</h1>
       </div>
 
       <div class="ui-g-12">
-        <p-selectButton [options]="tipos"  #tipo name="tipo" ngModel required></p-selectButton>
+        <p-selectButton [options]="tipos" #tipo></p-selectButton>
       </div>
 
       <div class="ui-g-6 ui-md-3 ui-fluid">
@@ -20,10 +20,7 @@
 
       <div class="ui-g-9 ui-fluid">
         <label>Descrição</label>
-        <input pInputText type="text" name="descricao" ngModel #descricao="ngModel" required>
-        <app-message [control]="descricao"  error="required" text="Informe uma descrição"> </app-message>
-
-
+        <input pInputText type="text">
       </div>
 
       <div class="ui-g-4 ui-md-3 ui-fluid">
@@ -33,12 +30,12 @@
 
        <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Categoria</label>
-        <p-dropdown placeholder="Selecione" [options]="categorias" [autoWidth]="false"  [filter]="true" required></p-dropdown>
+        <p-dropdown placeholder="Selecione" [options]="categorias" [autoWidth]="false"  [filter]="true"></p-dropdown>
       </div>
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Pessoa</label>
-       <p-dropdown placeholder="Selecione" [options]="pessoas" [autoWidth]="false" [filter]="true" ngModel required></p-dropdown>
+       <p-dropdown placeholder="Selecione" [options]="pessoas" [autoWidth]="false" [filter]="true"></p-dropdown>
       </div>
 
       <div class="ui-g-12 ui-fluid">
@@ -47,7 +44,7 @@
       </div>
 
       <div class="ui-g-12">
-        <button pButton type="submit" label="Salvar" [disabled]="form.invalid" ></button>
+        <button pButton type="submit" label="Salvar" ></button>
         <button pButton  type="button" label="Novo" class="ui-button-info" ></button>
         <a href="#">Voltar para a pesquisa</a>
       </div>
