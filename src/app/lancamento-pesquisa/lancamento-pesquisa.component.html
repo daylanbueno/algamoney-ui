@@ -23,34 +23,7 @@
 
   <div class="ui-g">
     <div class="ui-g-12">
-
-      <p-dataTable [value]="lancamentos"  [paginator]="true" [rows]="10" [responsive]="true">
-        <p-column field="pessoa" header="Nome"></p-column>
-        <p-column field="tipo" header="Tipo"></p-column>
-        <p-column field="descricao" header="Descrição"></p-column>
-        <p-column field="dataVencimento" header="Vencimento"   styleClass="col-data" >
-          <ng-template let-lanc="rowData" pTemplate="body">
-          <span>{{ lanc.dataVencimento | date:'dd/MM/yyyy' }}</span>
-        </ng-template>
-        </p-column>
-        <p-column field="dataPagamento" header="Pagamento"  styleClass="col-data">
-          <ng-template let-lanc="rowData" pTemplate="body">
-            <span>{{ lanc.dataVencimento | date:'dd/MM/yyyy' }}</span>
-          </ng-template>
-        </p-column>
-        <p-column field="valor" header="Valor" styleClass="col-valor">
-          <ng-template let-lanc="rowData" pTemplate="body">
-            <span [ngStyle]="{ color: lanc.tipo == 'DESPESA' ? 'red' : 'blue'}">{{lanc.valor | number:'1.2-2'}}</span>
-          </ng-template>
-        </p-column>
-        <p-column header="Opções" styleClass="col-opcoes">
-            <ng-template pTemplate="body">
-             <!-- <a pButton  icon="fa-pencil"></a> -->
-              <button pButton icon="fa-pencil"  pTooltip="Editar registro " tooltipPosition="top"></button>
-              <button pButton icon="fa-trash"   pTooltip="Excluir registro" tooltipPosition="top"></button>
-            </ng-template>
-        </p-column>
-      </p-dataTable>
+      <app-lancamento-grid [lancamentos]="lancamentos"></app-lancamento-grid>
     </div>
 
     <div class="ui-g-12">

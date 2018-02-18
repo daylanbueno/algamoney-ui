@@ -1,0 +1,21 @@
+
+<p-dataTable [value]="pessoas"  [paginator]="true" [rows]="10" [responsive]="true">
+  <p-column field="nome" header="Nome"></p-column>
+  <p-column field="cidade" header="Cidade"></p-column>
+  <p-column field="estado" header="Estado"></p-column>
+  <p-column field="ativo" header="Status">
+    <ng-template let-p="rowData" pTemplate="body">
+      <a href="#" [pTooltip]=" p.ativo  ? 'Desativar' : 'Ativar'"
+        tootipPosition="top">
+        {{ p.ativo ? 'Ativo' : 'Inativo' }}
+      </a>
+    </ng-template>
+  </p-column>
+  <p-column header="Opções" styleClass="col-opcoes">
+      <ng-template pTemplate="body">
+        <!-- <a pButton  icon="fa-pencil"></a> -->
+        <button pButton icon="fa-pencil"  pTooltip="Editar registro " tooltipPosition="top"></button>
+        <button pButton icon="fa-trash"   pTooltip="Excluir registro" tooltipPosition="top"></button>
+      </ng-template>
+  </p-column>
+</p-dataTable>
