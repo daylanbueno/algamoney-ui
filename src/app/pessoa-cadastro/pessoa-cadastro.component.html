@@ -1,23 +1,25 @@
 <div class="container">
 
-  <form>
+  <form #formulario="ngForm">
     <div class="ui-g-12">
       <h1>Nova Pessoa</h1>
     </div>
 
     <div class="ui-g-12 ui-fluid">
       <label>Nome</label>
-      <input pInputText type="text">
-    </div>
-
+      <input pInputText type="text" name="nome"  ngModel #nome="ngModel" required>
+      <app-message [control]="nome" error="required" text="Por favor você deve informar um nome !" ></app-message>
+     </div>
     <div class="ui-g-9 ui-fluid">
       <label>Logradouro</label>
-      <input pInputText type="text">
+      <input pInputText type="text" name="logradouro" #logradouro="ngModel" required ngModel>
+      <app-message [control]="logradouro" error="required" text="Por favor você deve informar um logradouro !"></app-message>
     </div>
 
     <div class="ui-g-3 ui-fluid">
       <label>Número</label>
-      <input pInputText type="text">
+      <input pInputText type="text" name="numero" #numero="ngModel" required ngModel>
+      <app-message [control]="numero" error="required" text="Por favor você deve informar um número !"></app-message>
     </div>
 
 
@@ -28,7 +30,8 @@
 
     <div class="ui-g-4 ui-fluid">
       <label>Bairro</label>
-      <input pInputText type="text">
+      <input pInputText type="text" name="bairro" #bairro="ngModel" required ngModel>
+      <app-message [control]="bairro" error="required" text="Por favor você deve informar um bairro !"></app-message>
     </div>
 
     <div class="ui-g-4 ui-fluid">
@@ -43,11 +46,11 @@
 
     <div class="ui-g-12 ui-md-6 ui-fluid">
       <label>Estado</label>
-      <p-dropdown placeholder="Selecione" [options]="estados" [autoWidth]="false"  [filter]="true"></p-dropdown>
+      <p-dropdown placeholder="Selecione" [options]="estados" [autoWidth]="false"  [filter]="true" ngModel required></p-dropdown>
     </div>
 
     <div class="ui-g-12">
-      <button pButton type="submit" label="Salvar" ></button>
+      <button pButton type="submit" label="Salvar" [disabled]="formulario.invalid" ></button>
       <button pButton  type="button" label="Novo" class="ui-button-info" ></button>
       <a href="#">Voltar para a pesquisa</a>
     </div>
