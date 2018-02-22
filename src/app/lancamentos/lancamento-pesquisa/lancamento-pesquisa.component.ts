@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './lancamento-pesquisa.component.html',
   styleUrls: ['./lancamento-pesquisa.component.css']
 })
-export class LoncamentoPesquisaComponent {
+export class LancamentoPesquisaComponent {
 
   title = 'app';
 

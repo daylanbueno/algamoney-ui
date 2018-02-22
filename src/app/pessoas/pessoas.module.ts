@@ -1,8 +1,9 @@
-import { PessoasModule } from './pessoas/pessoas.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
+import { PessoaGridComponent } from './pessoa-grid/pessoa-grid.component';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+import { PessoaPesquisaComponent } from './pessoa-pesquisa/pessoa-pesquisa.component';
+import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
+
 import {InputTextModule} from 'primeng/components/inputtext/inputtext';
 import {ButtonModule} from 'primeng/components/button/button';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
@@ -10,26 +11,17 @@ import {TooltipModule} from 'primeng/components/tooltip/tooltip';
 import { InputTextareaModule } from 'primeng/components/inputtextarea/inputtextarea';
 import {CalendarModule} from 'primeng/calendar';
 import {SelectButtonModule} from 'primeng/selectbutton';
-import {DropdownModule} from 'primeng/dropdown';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
-
-
-import { NavbarComponent } from './navbar/navbar.component';
+import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-import { MessageComponent } from './message/message.component';
-import { LancamentosModule } from './lancamentos/lancamentos.module';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    MessageComponent,
-  ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    InputTextModule,
+    ButtonModule,
     InputTextModule,
     ButtonModule,
     DataTableModule,
@@ -37,14 +29,19 @@ import { LancamentosModule } from './lancamentos/lancamentos.module';
     InputTextareaModule,
     CalendarModule,
     SelectButtonModule,
-    DropdownModule,
     CurrencyMaskModule,
     InputMaskModule,
-    LancamentosModule,
-    PessoasModule,
+    DropdownModule,
     FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    PessoaPesquisaComponent,
+    PessoaCadastroComponent,
+    PessoaGridComponent
+  ],
+  exports : [
+    PessoaPesquisaComponent,
+    PessoaCadastroComponent
+  ]
 })
-export class AppModule { }
+export class PessoasModule { }
