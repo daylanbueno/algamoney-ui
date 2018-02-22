@@ -7,27 +7,26 @@
 
     <div class="ui-g-12 ui-fluid">
       <label>Nome</label>
-      <input pInputText type="text" name="nome"  ngModel #nome="ngModel" required>
-   <!--
-      <app-message [control]="nome" error="required" text="Por favor você deve informar um nome !" ></app-message>
-   -->
-    </div>
+        <input pInputText type="text" name="nome"  ngModel #nome="ngModel" required>
+        <app-message [control]="nome" error="required" text="Por favor você deve informar um nome !" ></app-message>
+
+      </div>
     <div class="ui-g-9 ui-fluid">
       <label>Logradouro</label>
       <input pInputText type="text" name="logradouro" #logradouro="ngModel" required ngModel>
-    <!--
+
       <app-message [control]="logradouro" error="required" text="Por favor você deve informar um logradouro !"></app-message>
-    -->
+
     </div>
 
     <div class="ui-g-3 ui-fluid">
       <label>Número</label>
       <input pInputText type="text" name="numero" #numero="ngModel" required ngModel>
-     <!--
-      <app-message [control]="numero" error="required" text="Por favor você deve informar um número !"></app-message>
-     -->
-    </div>
 
+      <app-message [control]="numero" error="required" text="Por favor você deve informar um número !"></app-message>
+
+    </div>
+''
 
     <div class="ui-g-4 ui-fluid">
       <label>Complemento</label>
@@ -37,9 +36,9 @@
     <div class="ui-g-4 ui-fluid">
       <label>Bairro</label>
       <input pInputText type="text" name="bairro" #bairro="ngModel" required ngModel>
-    <!--
+
       <app-message [control]="bairro" error="required" text="Por favor você deve informar um bairro !"></app-message>
-    -->
+
     </div>
 
     <div class="ui-g-4 ui-fluid">
@@ -54,7 +53,8 @@
 
     <div class="ui-g-12 ui-md-6 ui-fluid">
       <label>Estado</label>
-      <p-dropdown placeholder="Selecione" [options]="estados" [autoWidth]="false"  [filter]="true" ngModel required></p-dropdown>
+      <p-dropdown placeholder="Selecione"  [options]="estados" [autoWidth]="false"  [filter]="true" ></p-dropdown>
+
     </div>
 
     <div class="ui-g-12">

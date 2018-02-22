@@ -15,6 +15,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     InputMaskModule,
     DropdownModule,
     FormsModule,
+    SharedModule
   ],
   declarations: [
     PessoaPesquisaComponent,

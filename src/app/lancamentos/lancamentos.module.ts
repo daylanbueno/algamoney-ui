@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { ButtonModule } from 'primeng/components/button/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,6 +35,7 @@ import { InputTextModule } from 'primeng/components/inputtext/inputtext';
     DropdownModule,
     CurrencyMaskModule,
     InputMaskModule,
+    SharedModule
   ],
   declarations: [
     LancamentoCadastroComponent,

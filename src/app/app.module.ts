@@ -17,7 +17,6 @@ import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { MessageComponent } from './message/message.component';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 
 
@@ -25,7 +24,6 @@ import { LancamentosModule } from './lancamentos/lancamentos.module';
   declarations: [
     AppComponent,
     NavbarComponent,
-    MessageComponent,
   ],
   imports: [
     BrowserModule,
