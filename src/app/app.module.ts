@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { CoreModule } from './core/core.module';
 import { PessoasModule } from './pessoas/pessoas.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,7 +17,9 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 
 import { FormsModule } from '@angular/forms';
+import { Http } from '@angular/http';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
+import { LancamentoService } from './lancamentos/lancamento.service';
 
 
 @NgModule({
@@ -39,9 +42,10 @@ import { LancamentosModule } from './lancamentos/lancamentos.module';
     LancamentosModule,
     PessoasModule,
     FormsModule,
-    CoreModule
+    CoreModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [LancamentoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { Http } from '@angular/http';
 import { SharedModule } from './../shared/shared.module';
 import { ButtonModule } from 'primeng/components/button/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
+import { LancamentoService } from './lancamento.service';
 
 
 @NgModule({
