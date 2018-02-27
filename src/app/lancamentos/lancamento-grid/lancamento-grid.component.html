@@ -1,4 +1,5 @@
-<p-dataTable [value]="lancamentos"  [paginator]="true" [rows]="5" [responsive]="true">
+<p-dataTable [value]="lancamentos"  [paginator]="true" [rows]="5" [responsive]="true"
+ emptyMessage="Não foi encontrado registro">
   <p-column field="pessoa.nome" header="Nome"></p-column>
   <p-column field="tipo" header="Tipo"></p-column>
   <p-column field="descricao" header="Descrição"></p-column>

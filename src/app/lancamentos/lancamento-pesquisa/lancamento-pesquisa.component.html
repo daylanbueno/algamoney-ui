@@ -12,13 +12,14 @@
 
         <div class="ui-g-12">
           <label style="display:block">Vencimento</label>
-          <p-calendar id="dtVencimento" dateFormat="dd/mm/yy" [readonlyInput]="false" [locale]="pt_BR"  [showIcon]="true" ></p-calendar>
+          <p-calendar  name="dataVencimentoInicio"[(ngModel)]="dataVencimentoInicio"  dateFormat="dd/mm/yy" [readonlyInput]="false" [locale]="pt_BR"  [showIcon]="true" ></p-calendar>
           <label>Até</label>
-          <p-calendar id="dtAte" dateFormat="dd/mm/yy" [readonlyInput]="false" [locale]="pt_BR"  [showIcon]="true" ></p-calendar>
+          <p-calendar name="dataVencimentoFim" [(ngModel)]="dataVencimentoFim" dateFormat="dd/mm/yy" [readonlyInput]="false" [locale]="pt_BR"  [showIcon]="true" ></p-calendar>
         </div>
 
         <div class="ui-g-12">
-          <button pButton  label="Pesquisar" type="submit" ></button>
+          <button pButton  label="Pesquisar" (click)="pesquisar()" ></button>
+          <button pButton  label="Limpar"  (click)="limpar()" ></button>
         </div>
     </form>
   </div>
