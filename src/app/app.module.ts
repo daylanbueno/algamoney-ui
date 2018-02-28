@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { LancamentoService } from './lancamentos/lancamento.service';
+import { PessoaService } from './pessoas/pessoa.service';
 
 
 @NgModule({
@@ -45,7 +46,10 @@ import { LancamentoService } from './lancamentos/lancamento.service';
     CoreModule,
     HttpModule
   ],
-  providers: [LancamentoService],
+  providers: [
+    LancamentoService,
+    PessoaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

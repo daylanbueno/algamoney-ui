@@ -1,3 +1,4 @@
+import { PessoaService } from './../pessoa.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,16 +6,18 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pessoa-pesquisa.component.html',
   styleUrls: ['./pessoa-pesquisa.component.css']
 })
-export class PessoaPesquisaComponent {
+export class PessoaPesquisaComponent implements OnInit {
 
-  pessoas = [
-        { nome: 'Manoel Pinheiro', cidade: 'Uberlândia', estado: 'MG', ativo: true },
-        { nome: 'Sebastião da Silva', cidade: 'São Paulo', estado: 'SP', ativo: false },
-        { nome: 'Carla Souza', cidade: 'Florianópolis', estado: 'SC', ativo: true },
-        { nome: 'Luís Pereira', cidade: 'Curitiba', estado: 'PR', ativo: true },
-        { nome: 'Vilmar Andrade', cidade: 'Rio de Janeiro', estado: 'RJ', ativo: false },
-        { nome: 'Paula Maria', cidade: 'Uberlândia', estado: 'MG', ativo: true }
-     ];
+  pessoas = [];
+  constructor(private pessoaService: PessoaService) {}
 
+  ngOnInit() {
+    this.pesquisar();
+  }
+
+  pesquisar() {
+  this.pessoaService.pesquisar()
+  .then(pessoas => this.pessoas = pessoas);
+  }
 
 }
