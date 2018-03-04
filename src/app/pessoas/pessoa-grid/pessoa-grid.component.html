@@ -1,5 +1,6 @@
 
-<p-dataTable [value]="pessoas"  [paginator]="true" [rows]="5" [responsive]="true">
+<p-dataTable [value]="pessoas"  [paginator]="true" [rows]="5" [responsive]="true"
+ emptyMessage="Não foi encontrado registro que atenda os paramentros da pesquisa! ">
   <p-column field="nome" header="Nome"></p-column>
   <p-column field="cidade" header="Cidade"></p-column>
   <p-column field="estado" header="Estado"></p-column>

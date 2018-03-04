@@ -6,11 +6,11 @@
 
       <div class="ui-g-12  ui-fluid">
         <label>Nome</label>
-        <input type="text" pInputText >
+        <input type="text" nome="nome" [(ngModel)]="nome" pInputText >
       </div>
 
       <div class="ui-g-12">
-        <button pButton  label="Pesquisar" type="submit" ></button>
+        <button pButton  label="Pesquisar" type="submit" (click)="pesquisar()" ></button>
       </div>
     </div>
 
