@@ -13,13 +13,14 @@ export interface LancamentoFilter {
 @Injectable()
 export class LancamentoService {
   lancamentosUrl = 'http://localhost:8080/lancamento';
+  toke = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MjAxMzkyNzcsInVzZXJfbmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQ0FEQVNUUkFSX0NBVEVHT1JJQSIsIlJPTEVfUEVTUVVJU0FSX1BFU1NPQSIsIlJPTEVfUkVNT1ZFUl9QRVNTT0EiLCJST0xFX0NBREFTVFJBUl9MQU5DQU1FTlRPIiwiUk9MRV9QRVNRVUlTQVJfTEFOQ0FNRU5UTyIsIlJPTEVfUkVNT1ZFUl9MQU5DQU1FTlRPIiwiUk9MRV9DQURBU1RSQVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0FURUdPUklBIl0sImp0aSI6IjU0NjRiOWE3LTBhMDUtNGEwZS1hMGQwLTRjMTJjMGE0NGY4NiIsImNsaWVudF9pZCI6ImFuZ3VsYXIiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.wyeGPd44HV6GNOxmD_Kyk7WVTJ7LT4Flx2404lGfT3M';
   constructor(private http: Http) { }
 
   pesquisar(filtro: LancamentoFilter) {
     const headers = new Headers();
     const params = new URLSearchParams();
     // tslint:disable-next-line:max-line-length
-    headers.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTk2OTkxNzMsInVzZXJfbmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQ0FEQVNUUkFSX0NBVEVHT1JJQSIsIlJPTEVfUEVTUVVJU0FSX1BFU1NPQSIsIlJPTEVfUkVNT1ZFUl9QRVNTT0EiLCJST0xFX0NBREFTVFJBUl9MQU5DQU1FTlRPIiwiUk9MRV9QRVNRVUlTQVJfTEFOQ0FNRU5UTyIsIlJPTEVfUkVNT1ZFUl9MQU5DQU1FTlRPIiwiUk9MRV9DQURBU1RSQVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0FURUdPUklBIl0sImp0aSI6IjRmYzMxNDA0LTEzM2YtNGQ0Yi05NWMzLTE3OWM1NDNhN2JhZCIsImNsaWVudF9pZCI6ImFuZ3VsYXIiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.jA6oNxr4tFpLqepa__SibGHhGYNyMe69ziOVu4y9MsU');
+    headers.append('Authorization', `${this.toke}` );
 
     if (filtro.descricao) {
       params.set('descricao', filtro.descricao);
@@ -34,6 +35,15 @@ export class LancamentoService {
     return this.http.get(`${this.lancamentosUrl}/pesquisar`, { headers, search: params })
     .toPromise()
     .then(response => response.json().content);
+  }
+
+  excluir(codigo: number): Promise<void> {
+    const headers = new Headers();
+     // tslint:disable-next-line:max-line-length
+     headers.append('Authorization',  `${this.toke}`);
+    return  this.http.delete(`${this.lancamentosUrl}/apagar/${codigo}`, {headers})
+    .toPromise()
+    .then(() => null);
   }
 
 }

@@ -19,10 +19,12 @@
     </ng-template>
   </p-column>
   <p-column header="Opções" styleClass="col-opcoes">
-      <ng-template pTemplate="body">
-       <!-- <a pButton  icon="fa-pencil"></a> -->
-        <button pButton icon="fa-pencil"  pTooltip="Editar registro " tooltipPosition="top"></button>
-        <button pButton icon="fa-trash"   pTooltip="Excluir registro" tooltipPosition="top"></button>
+      <ng-template let-lanc="rowData" pTemplate="body">
+        <button pButton icon="fa-pencil"  pTooltip="Editar registro " tooltipPosition="top">
+        </button>
+        <button pButton icon="fa-trash"   pTooltip="Excluir registro" tooltipPosition="top"
+          (click)="excluir(lanc)">
+        </button>
       </ng-template>
   </p-column>
 </p-dataTable>

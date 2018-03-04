@@ -1,5 +1,6 @@
 import { LancamentoService, LancamentoFilter } from './../lancamento.service';
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core/src/metadata/directives';
 
 
 
@@ -30,6 +31,7 @@ export class LancamentoPesquisaComponent  implements OnInit {
     this.lancamentoService.pesquisar(filtro)
     .then(lancamentos => this.lancamentos = lancamentos);
   }
+
 
   limpar(): void {
     this.descricao = null;
