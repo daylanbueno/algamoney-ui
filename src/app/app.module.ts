@@ -16,6 +16,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 
+import { ToastyModule } from 'ng2-toasty';
+
 import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
@@ -44,7 +46,9 @@ import { PessoaService } from './pessoas/pessoa.service';
     PessoasModule,
     FormsModule,
     CoreModule,
-    HttpModule
+    HttpModule,
+
+    ToastyModule.forRoot()
   ],
   providers: [
     LancamentoService,

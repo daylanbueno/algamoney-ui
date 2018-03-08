@@ -1,6 +1,7 @@
 import { LancamentoService, LancamentoFilter } from './../lancamento.service';
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core/src/metadata/directives';
+import { ToastyService } from 'ng2-toasty';
 
 
 
@@ -16,7 +17,10 @@ export class LancamentoPesquisaComponent  implements OnInit {
   lancamentos = [];
   pt_BR: any;
 
-  constructor(private lancamentoService: LancamentoService) {}
+  constructor(
+    private lancamentoService: LancamentoService,
+    private toastyService: ToastyService
+  ) {}
    ngOnInit() {
     this.pesquisar();
     this.tradutorCalendario();
@@ -37,6 +41,7 @@ export class LancamentoPesquisaComponent  implements OnInit {
     this.descricao = null;
     this.dataVencimentoInicio = null;
     this.dataVencimentoFim = null;
+    this.toastyService.success('Deu certo tudo limpo');
     }
 
   tradutorCalendario() {

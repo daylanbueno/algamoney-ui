@@ -2,6 +2,7 @@ import { LancamentoService } from './../lancamento.service';
 import { PessoaService } from './../../pessoas/pessoa.service';
 import { Component, OnInit,Input } from '@angular/core';
 import { LancamentoPesquisaComponent } from '../lancamento-pesquisa/lancamento-pesquisa.component';
+import { ToastyService } from 'ng2-toasty';
 
 @Component({
   selector: 'app-lancamento-grid',
@@ -10,13 +11,18 @@ import { LancamentoPesquisaComponent } from '../lancamento-pesquisa/lancamento-p
 })
 export class LancamentoGridComponent {
 
-  constructor(private pesquisarComponent: LancamentoPesquisaComponent , private lancamentoService: LancamentoService) {}
+  constructor(
+    private pesquisarComponent: LancamentoPesquisaComponent,
+    private lancamentoService: LancamentoService,
+    private toastyService: ToastyService
+    ) {}
    @Input() lancamentos = [];
 
    excluir(lancamento: any) {
     this.lancamentoService.excluir(lancamento.codigo)
     .then(() => {
       this.pesquisarComponent.ngOnInit();
+      this.toastyService.success('Operação realizada com sucesso!');
     });
    }
 
