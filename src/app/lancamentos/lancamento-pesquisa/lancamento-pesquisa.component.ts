@@ -2,6 +2,7 @@ import { LancamentoService, LancamentoFilter } from './../lancamento.service';
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core/src/metadata/directives';
 import { ToastyService } from 'ng2-toasty';
+import {ConfirmationService} from 'primeng/api';
 
 
 
@@ -19,7 +20,8 @@ export class LancamentoPesquisaComponent  implements OnInit {
 
   constructor(
     private lancamentoService: LancamentoService,
-    private toastyService: ToastyService
+    private toastyService: ToastyService,
+    private confirmationService: ConfirmationService
   ) {}
    ngOnInit() {
     this.pesquisar();

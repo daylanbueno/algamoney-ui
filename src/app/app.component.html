@@ -7,3 +7,10 @@
   <app-lancamento-cadastro></app-lancamento-cadastro>
 -->
 <ng2-toasty></ng2-toasty>
+
+<p-confirmDialog header="Confirmação" icon="fa fa-question-circle" width="425" #cd>
+  <p-footer>
+      <button type="button" pButton icon="fa-close" label="Não" (click)="cd.reject()"></button>
+      <button type="button" pButton icon="fa-check" label="Sim" (click)="cd.accept()"></button>
+  </p-footer>
+</p-confirmDialog>

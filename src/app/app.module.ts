@@ -15,7 +15,8 @@ import {SelectButtonModule} from 'primeng/selectbutton';
 import {DropdownModule} from 'primeng/dropdown';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
-
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
 import { ToastyModule } from 'ng2-toasty';
 
 import { FormsModule } from '@angular/forms';
@@ -47,12 +48,13 @@ import { PessoaService } from './pessoas/pessoa.service';
     FormsModule,
     CoreModule,
     HttpModule,
-
+    ConfirmDialogModule,
     ToastyModule.forRoot()
   ],
   providers: [
     LancamentoService,
-    PessoaService
+    PessoaService,
+    ConfirmationService
   ],
   bootstrap: [AppComponent]
 })
