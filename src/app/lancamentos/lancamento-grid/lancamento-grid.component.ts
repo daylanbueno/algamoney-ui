@@ -4,6 +4,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LancamentoPesquisaComponent } from '../lancamento-pesquisa/lancamento-pesquisa.component';
 import { ToastyService } from 'ng2-toasty';
 import {ConfirmationService} from 'primeng/api';
+import { error } from 'util';
+import { ErrosHandlerService } from '../../core/erros-handler.service';
 
 @Component({
   selector: 'app-lancamento-grid',
@@ -16,9 +18,8 @@ export class LancamentoGridComponent {
     private pesquisarComponent: LancamentoPesquisaComponent,
     private lancamentoService: LancamentoService,
     private toastyService: ToastyService,
-    private confirmacaoServico: ConfirmationService
-
-
+    private confirmacaoServico: ConfirmationService,
+    private erroHandlerService: ErrosHandlerService
     ) {}
    @Input() lancamentos = [];
 
@@ -31,13 +32,13 @@ export class LancamentoGridComponent {
        });
    }
 
-
 efetuarExclusao(lancamento: any) {
   this.lancamentoService.excluir(lancamento.codigo)
   .then(() => {
       this.pesquisarComponent.ngOnInit();
       this.toastyService.success('Operação realizada com sucesso!');
-  });
+  })
+  .catch(erro => this.erroHandlerService.handle(erro));
 }
 
 }

@@ -12,12 +12,7 @@ export class PessoaPesquisaComponent implements OnInit {
   constructor(private pessoaService: PessoaService) {}
 
   ngOnInit() {
-    this.listar();
-  }
-
-  listar() {
-    this.pessoaService.listar()
-    .then(pessoas => this.pessoas = pessoas);
+    this.pesquisar();
   }
 
   pesquisar() {

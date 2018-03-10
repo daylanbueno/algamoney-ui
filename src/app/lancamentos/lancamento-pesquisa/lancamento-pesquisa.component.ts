@@ -2,7 +2,7 @@ import { LancamentoService, LancamentoFilter } from './../lancamento.service';
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core/src/metadata/directives';
 import { ToastyService } from 'ng2-toasty';
-import {ConfirmationService} from 'primeng/api';
+import { ErrosHandlerService } from '../../core/erros-handler.service';
 
 
 
@@ -21,7 +21,7 @@ export class LancamentoPesquisaComponent  implements OnInit {
   constructor(
     private lancamentoService: LancamentoService,
     private toastyService: ToastyService,
-    private confirmationService: ConfirmationService
+    private erroHandler: ErrosHandlerService
   ) {}
    ngOnInit() {
     this.pesquisar();
@@ -35,7 +35,8 @@ export class LancamentoPesquisaComponent  implements OnInit {
       };
       console.log(filtro);
     this.lancamentoService.pesquisar(filtro)
-    .then(lancamentos => this.lancamentos = lancamentos);
+    .then(lancamentos => this.lancamentos = lancamentos)
+    .catch(erro => this.erroHandler.handle(erro));
   }
 
 
